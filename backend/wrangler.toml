@@ -6,7 +6,7 @@ compatibility_date = "2024-11-22"
 
 [vars]
 JWT_SECRET = "123456"
-DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiYTJmZjg0YWQtYTFjNi00ZTdiLWI3ZmUtZjg0N2ZlZjA0OGI0IiwidGVuYW50X2lkIjoiMDg3NjFhM2UzNmMxMGY0MGE5ZTNmNTJkZjNlZWFmODBlZDU5MGJjOThhZTRiM2U2MDQ4MzIyMTk2NTg3MDg3YSIsImludGVybmFsX3NlY3JldCI6IjVlMzcwYWY4LWFmMzItNDZmNi1iY2RkLWQ0NTE5MmFjZmEyNyJ9.QxqHSSj03aQ0q5S8r8CLF5Pa0mNq5PLgsk82xJv5kao"
+DATABASE_URL="PRISMA_ACCELERATE_URL"
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
 # id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

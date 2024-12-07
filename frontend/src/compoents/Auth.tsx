@@ -34,7 +34,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
         <div className="font-thin text-center">{type === "signin" ? "Don't Have an Account?" : "Already Have an Account?"} <Link to={type === "signin" ? '/signup' : '/signin'} className="underline">{type === "signin" ? "SignUp" : "LogIn"}</Link></div>
         <div className="flex flex-col justify-center items-center p-2">
             <LabledInput lable="Name" placeholder="Kundan" onChange={(e) => { setPostInputs({ ...postInputs, name: e.target.value }) }}></LabledInput>
-            {type==="signup" ? <LabledInput lable="Email" placeholder="abcd@gmail.com" onChange={(e) => { setPostInputs({ ...postInputs, email: e.target.value }) }}></LabledInput> : null }
+            <LabledInput lable="Email" placeholder="abcd@gmail.com" onChange={(e) => { setPostInputs({ ...postInputs, email: e.target.value }) }}></LabledInput>
             <LabledInput type={"password"} lable="Password" placeholder="Password" onChange={(e) => { setPostInputs({ ...postInputs, password: e.target.value }) }}></LabledInput>
             <button onClick={sendRequest} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700  w-2/4 mt-2 ">{type === "signup" ? "SignUp" : "SignIn"}</button>
         </div>

@@ -18,7 +18,7 @@ app.use('/api/v1/blog/*',async(c,next)=>{
     const header_auth = c.req.header('Authorization');
     // @ts-ignore
     const payload = await verify(header_auth,c.env.JWT_SECRET);
-    if(!payload.id)
+    if(!payload)
     {
         c.status(403)
         return c.json({msg:"UnAuthorized!"});
@@ -65,11 +65,10 @@ app.post('/api/v1/user/signin',async(c)=>{
       return c.json({msg:"User Dosen't Exist Please Sign-up"});
    }
    else {
-      return c.json({
-        msg:"Welcome Back!"+user_check.name
-      })
+      //@ts-ignore
+      const token = await sign({user: user_check.id},c.env.JWT_SECRET);
+      return c.json({AuthToken: token});
    }
-    return c.text("hello");
 });
 
 app.post('/api/v1/blog',(c)=>{
@@ -80,12 +79,18 @@ app.put('/api/v1/blog',(c)=>{
   return c.text("hello");
 });
 
-app.get('/api/v1/blog/:id', (c) => {
-  return c.text('Hello Hono!')
-});
+/*app.get('/api/v1/blog/:id', (c) => {
+  return c.json({Blogs: Blogss});
+});*/
 
 app.get('/api/v1/blog/bulk',(c)=>{
-    return c.text("hello");
+    return c.json({Blog: {
+      id:1,
+      authorId: 11,
+      content: "this is my first blog",
+      title: "my first blog",
+      published: false
+  }});
 });
 
 export default app

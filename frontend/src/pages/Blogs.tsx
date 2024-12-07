@@ -1,8 +1,17 @@
 import { Appbar } from "../compoents/Appbar";
 import { BlogCard } from "../compoents/BlogCard";
+import { useBlogs } from "../hooks";
 
 
 export function Blogs() {
+    const {loading,blogs} = useBlogs();
+
+    if(loading)
+    {
+        return <div>
+            loading...
+        </div>
+    }
     return <div className="flex flex-col gap-y-2">
         <Appbar/>
         <div className="flex justify-center"><div className="flex flex-col gap-y-2 max-w-xl">
